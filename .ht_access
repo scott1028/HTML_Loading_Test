@@ -1,0 +1,14 @@
+Listen 3333
+
+<VirtualHost *:3333>
+	DocumentRoot /Users/scott/workspace
+	AddHandler cgi-script .py
+
+	<Directory /Users/scott/workspace>
+		Options Indexes FollowSymlinks MultiViews ExecCGI
+		AllowOverride None
+		Addhandler cgi-script .py
+		Order allow,deny
+		Allow from all
+	</Directory>
+</VirtualHost>
