@@ -21,12 +21,26 @@ print '''Content-type: text/html\r\n
 
 			$('#container').text(r.a);
 		});
+
+		function imgError(image) {
+			image.onerror = "";
+			image.src = "loading.gif";
+			return true;
+		}
 	</script>
-	<img src="image.py" style="width: 200px; height: 200px;" />
+	<img src="image.py" style="width: 200px; height: 300px;" onerror="imgError(this);" />
 </body>
 <script>
 	$('body').ready(function(e){
 		console.log(e);
 	});
 </script>
+<style>
+	/* Make Ajax Loading Image and fit it's container. */
+	img {
+		background: url('loading.gif');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+</style>
 </html>'''
