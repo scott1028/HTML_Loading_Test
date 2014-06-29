@@ -16,13 +16,13 @@ print '''Content-type: text/html\r\n
 	loading
 	</div>
 	<script>
-		$.get('/store.py', function(r, i ,a){
+		$.get('store.py', function(r, i ,a){
 			console.log(r);
 
 			$('#container').text(r.a);
 		});
 	</script>
-	<img src="/image.py" style="width: 200px; height: 200px;" />
+	<img src="image.py" style="width: 200px; height: 200px;" />
 </body>
 <script>
 	$('body').ready(function(e){
